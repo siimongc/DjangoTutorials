@@ -1,0 +1,44 @@
+# 🛑 Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*.so
+
+# 🛑 Entornos virtuales
+venv/
+env/
+*.venv
+
+# 🛑 Archivos de configuración sensibles
+.env
+*.env
+
+# 🛑 Archivos de bases de datos locales
+db.sqlite3
+*.sqlite3
+
+# 🛑 Archivos de logs y depuración
+*.log
+logs/
+debug.log
+
+# 🛑 Archivos de migraciones cacheados (opcional)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# 🛑 Dependencias de Python
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# 🛑 Archivos de Django relacionados con estáticos y media (opcional)
+staticfiles/
+media/
+
+# 🛑 Archivos de VSCode y otros editores (opcional)
+.vscode/
+.idea/
+*.sublime-workspace
+
+# 🛑 Archivos de Docker y contenedores (si usas Docker)
+*.dockerignore
+docker-compose.override.yml
