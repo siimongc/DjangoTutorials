@@ -1,0 +1,32 @@
+{% extends 'pages/base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block header_title %} {{subtitle}} {% endblock %}
+
+{% block content %}
+{% if messages %}
+    <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 col-lg-3 mb-2">
+        <div class="card">
+            <img src="https://static.djangoproject.com/img/logos/django-logo-positive.svg" class="card-img-top img-card">
+            <div class="card-body text-center">
+                <a href="{% url 'show' id=product.id %}"
+                   class="btn bg-primary text-white">{{product.name}}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
