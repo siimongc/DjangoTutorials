@@ -16,9 +16,17 @@
                     <span class="{% if product.numeric_price > 100 %}text-danger{% else %}text-dark{% endif %}">
                         {{ product.name }}
                     </span>
-                </h5>                              
+                </h5>
+                {% if product.price > 2000 %}
+                    <p class="card-text" style="color: red;">{{ product.price }}</p>
+                {% else %}
+                    <p class="card-text">{{ product.price }}</p>
+                {% endif %}
+                {% for comment in product.comment_set.all %}
+                - {{ comment.description }}<br />
+                {% endfor %}
+
                 <p><strong>Descripción:</strong> {{ product.description }}</p>
-                <p><strong>Precio:</strong> {{ product.price }}</p>
             </div>
         </div>
     </div>
